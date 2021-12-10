@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Data Table</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css"/>
+</head>
+<body>
+    <div>
+        <table id="table1" class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Name</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody id="table1_body">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        let return_data_table = make_data_table();
+        setInterval(() => {
+            console.log(new Date());
+            return_data_table.ajax.reload(null, false);
+        }, 60000);
+    });
+    </script>
+    <script>
+        function make_data_table(){
+            $('#table1').DataTable().destroy()
+            let data_table = $('#table1').DataTable({
+                scrollY:500,
+                ajax: {
+                "type" : "POST",
+                 "data" : { csrfmiddlewaretoken: "{{ csrf_token }}"},
+                 "url" : "/get_variable_all/",
+                    "dataType": "JSON"
+                 },
+                columns: [
+                           { data: "variable_idx" },
+                           { data: "variable_name" },
+                           { data: "value" }
+                       ]
+            });
+            return data_table;
+        }
+    </script>
+    </body>
+</html>
