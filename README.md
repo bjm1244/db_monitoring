@@ -33,8 +33,7 @@ MYSQL 시스템 변수 모니터링
         1) ubuntu / mac : source ./venv/bin/activate 실행
         2) window : \venv\Scripts 아래 activate.bat 실행
     - pip update 후에 requirements에 있는 디펜던시 설치
-        1) pip install --upgrade pip
-        2) pip install -r requirements.txt
+        1) pip install -r requirements.txt
             - 파이썬이 3.8 아래 버젼이면 django 에러가 나옴. 버젼 확인 필요함.
             - mysql 없을 시에 mysql-client 디펜던시 설치가 에러 나오기에 디펜던시 설치 전에 mysql 설치 필요함.
 ~~~
