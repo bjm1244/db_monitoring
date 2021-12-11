@@ -27,14 +27,16 @@ MYSQL 시스템 변수 모니터링
 ~~~
 2. 프로젝트에 들어간 후 가상환경 생성
 ~~~
-    - 아래 셋 중에 하나 실행 시켜 가상환경 생성
-        1) python -m venv venv
-        2) python3.8 -m venv venv
-        3) python3 -m venv venv
+    - 가상환경 생성
+        1) python3.8 -m venv venv
     - 가상환경 접속
         1) ubuntu / mac : source ./venv/bin/activate 실행
         2) window : \venv\Scripts 아래 activate.bat 실행
-    - pip install -r requirements.txt
+    - pip update 후에 requirements에 있는 디펜던시 설치
+        1) pip install --upgrade pip
+        2) pip install -r requirements.txt
+            - 파이썬이 3.8 아래 버젼이면 django 에러가 나옴. 버젼 확인 필요함.
+            - mysql 없을 시에 mysql-client 디펜던시 설치가 에러 나오기에 디펜던시 설치 전에 mysql 설치 필요함.
 ~~~
 3. 장고 세팅 & 실행
 ~~~
