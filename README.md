@@ -3,15 +3,15 @@ MYSQL 시스템 변수 모니터링
 
 진행사항
 ---------------------------
-1. 진행사항
+1. Todo
 ~~~
-[x] system variables 리스트와 검색기능
-[x] ajax를 이용한 페이지 새로고침 없이 1분마다 데이터 동기화
-[x] system variables log 저장
+    - [x] system variables 리스트와 검색기능
+    - [x] ajax를 이용한 페이지 새로고침 없이 1분마다 데이터 동기화
+    - [x] system variables log 저장
 ~~~
 프로그램 설명
 ---------------------------
-1. 서비스 구조
+1. 구조 : page 에서 system variables를 보여주는 프로그램
 ~~~
     - Page
         - index페이지 : / : 시스템 변수 모니터링 페이지
@@ -19,10 +19,13 @@ MYSQL 시스템 변수 모니터링
         - get_show_variable : /get_show_variable : 시스템 변수 모니터링 api
         - get_time : /get_time : 현재 서버 시간 api
 ~~~
-프로그램 설치를 위한 세팅
+프로그램 세팅
 ---------------------------
-1. 파이썬 3.8 설치
-2. 가상환경 생성
+1. Mysql서버 5.7, 파이썬 3.8 설치 후 Github repo clone
+~~~
+    - git clone https://github.com/bjm1244/db_monitoring.git
+~~~
+2. 프로젝트에 들어간 후 가상환경 생성
 ~~~
     - 아래 셋 중에 하나 실행 시켜 가상환경 생성
         1) python -m venv venv
