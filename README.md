@@ -53,5 +53,5 @@ MYSQL 시스템 변수 모니터링
 4. localhost:8000 주소로 접속
 ~~~
     - 실행 : python manage.py runserver 8000 
-	- ex) http://localhost:8000
+	- 주소 접속 : http://localhost:8000
 ~~~
